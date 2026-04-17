@@ -1,5 +1,5 @@
 {
-  "framework_name": "SIMA360 Adaptive Business Questions",
+  "framework_name": "Business Diagnostic Questions",
   "version": "1.0",
   "purpose": "Adaptive business assessment questions that identify business needs independent of AI. Questions are organized by category and subcategory so a program can ask initial categorization questions, then trigger deeper follow-up questions and map the results to businessresults.json.",
   "rating_scale": {

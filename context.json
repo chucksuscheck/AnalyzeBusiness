@@ -73,20 +73,21 @@
     ]
   },
   {
-    "id": "ai_usage",
+    "id": "work_tracking",
     "type": "single_select",
-    "question": "Are you currently using any AI tools in your business?",
+    "question": "How do you currently keep track of customer work, jobs, leads, or orders?",
     "options": [
-      "No, not at all",
-      "I’ve tried a few tools",
-      "Yes, in a few areas",
-      "Yes, regularly across the business"
+      "Mostly memory or informal notes",
+      "Paper notes or notebooks",
+      "Spreadsheets or shared lists",
+      "A dedicated business system or software",
+      "A mix of several methods"
     ]
   },
   {
-    "id": "tech_comfort",
+    "id": "change_comfort",
     "type": "single_select",
-    "question": "How comfortable are you with trying new technology?",
+    "question": "How comfortable is your business with changing tools or processes when something is not working?",
     "options": [
       "Not comfortable",
       "Somewhat comfortable",
