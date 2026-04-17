@@ -1,0 +1,109 @@
+[
+  {
+    "id": "business_type",
+    "type": "single_select",
+    "question": "Which best describes your business?",
+    "options": [
+      "Brick-and-mortar retail (physical store)",
+      "Online retail (e-commerce)",
+      "Hybrid (both in-store and online)",
+      "Service-based business (appointments, bookings)",
+      "Other"
+    ]
+  },
+  {
+    "id": "channels",
+    "type": "multi_select",
+    "question": "Where do most of your customer interactions happen? (Select all that apply)",
+    "options": [
+      "In-store (face-to-face)",
+      "Email",
+      "Phone / SMS",
+      "Website (contact forms or chat)",
+      "Social media (Instagram, Facebook, etc.)",
+      "Online store (Shopify, etc.)"
+    ]
+  },
+  {
+    "id": "team_size",
+    "type": "single_select",
+    "question": "How many people work in your business (including yourself)?",
+    "options": [
+      "Just me",
+      "2–5 people",
+      "6–10 people",
+      "11–20 people",
+      "21–50 people"
+    ]
+  },
+  {
+    "id": "primary_pain",
+    "type": "single_select",
+    "question": "What is your biggest challenge right now?",
+    "options": [
+      "Responding to customers quickly",
+      "Keeping up with marketing and social media",
+      "Managing day-to-day operations",
+      "Training staff / keeping things consistent",
+      "Getting more customers / increasing sales"
+    ]
+  },
+  {
+    "id": "secondary_pain",
+    "type": "single_select",
+    "question": "What is your second biggest challenge?",
+    "options": [
+      "Responding to customers quickly",
+      "Keeping up with marketing and social media",
+      "Managing day-to-day operations",
+      "Training staff / keeping things consistent",
+      "Getting more customers / increasing sales"
+    ]
+  },
+  {
+    "id": "time_spent",
+    "type": "single_select",
+    "question": "Where do you personally spend the most time each week?",
+    "options": [
+      "Answering customer questions",
+      "Creating marketing content",
+      "Managing staff / operations",
+      "Administrative work",
+      "Other"
+    ]
+  },
+  {
+    "id": "ai_usage",
+    "type": "single_select",
+    "question": "Are you currently using any AI tools in your business?",
+    "options": [
+      "No, not at all",
+      "I’ve tried a few tools",
+      "Yes, in a few areas",
+      "Yes, regularly across the business"
+    ]
+  },
+  {
+    "id": "tech_comfort",
+    "type": "single_select",
+    "question": "How comfortable are you with trying new technology?",
+    "options": [
+      "Not comfortable",
+      "Somewhat comfortable",
+      "Comfortable",
+      "Very comfortable"
+    ]
+  },
+  {
+    "id": "desired_outcome",
+    "type": "single_select",
+    "question": "What would you most like to improve in the next 30 days?",
+    "options": [
+      "Save time",
+      "Increase sales",
+      "Improve customer experience",
+      "Reduce stress / workload",
+      "Improve consistency"
+    ]
+  }
+]

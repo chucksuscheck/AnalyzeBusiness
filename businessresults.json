@@ -1,0 +1,575 @@
+{
+  "framework_name": "SIMA360 Business Results Framework",
+  "version": "1.0",
+  "purpose": "Narrative business-results library for use after categorization and adaptive questions are answered. This file is independent of AI and is intended to be queried by category, subcategory, and rating.",
+  "rating_scale": {
+    "0": {
+      "label": "Chaotic",
+      "summary": "Behavior is inconsistent, reactive, and heavily dependent on individuals."
+    },
+    "1": {
+      "label": "Ad Hoc",
+      "summary": "Some useful practice exists, but results still depend too much on effort, memory, and workarounds."
+    },
+    "2": {
+      "label": "Defined",
+      "summary": "Basic structure exists and is generally understood, though performance still varies under pressure."
+    },
+    "3": {
+      "label": "Managed",
+      "summary": "Practices are clear, reliable, and resilient, with less dependence on heroics."
+    }
+  },
+  "overall_business_states": [
+    {
+      "min_average": 0.0,
+      "max_average": 0.99,
+      "name": "Reactive",
+      "narrative": "The business is operating in a largely reactive mode. Its most immediate needs are stability, clarity, ownership, and control over recurring work.",
+      "direction": [
+        "Stabilize the most disruptive recurring problems first.",
+        "Define ownership and minimum expectations for core business activity.",
+        "Reduce dependence on memory, improvisation, and crisis response."
+      ]
+    },
+    {
+      "min_average": 1.0,
+      "max_average": 1.74,
+      "name": "Emerging",
+      "narrative": "The business has useful instincts and some structure, but too much still depends on individual effort. The central need is to turn scattered good practice into repeatable discipline.",
+      "direction": [
+        "Choose a few high-friction areas to standardize instead of trying to fix everything at once.",
+        "Add simple visibility to work in progress, open issues, and follow-through.",
+        "Clarify which routines must happen every time regardless of workload."
+      ]
+    },
+    {
+      "min_average": 1.75,
+      "max_average": 2.49,
+      "name": "Defined",
+      "narrative": "The business has meaningful structure in place. The next need is refinement: improving consistency under pressure, reducing bottlenecks, and increasing leverage.",
+      "direction": [
+        "Strengthen the weakest business area without disrupting what already works.",
+        "Reduce recurring exceptions, handoff friction, and avoidable rework.",
+        "Use a small set of measures to guide improvement priorities."
+      ]
+    },
+    {
+      "min_average": 2.5,
+      "max_average": 3.0,
+      "name": "Managed",
+      "narrative": "The business shows solid operating discipline. The next need is selective improvement, resilience, and targeted scaling rather than broad restructuring.",
+      "direction": [
+        "Protect the routines and ownership models that already create reliability.",
+        "Improve only the few constraints that materially limit growth or efficiency.",
+        "Use stronger cross-functional coordination to sustain performance at scale."
+      ]
+    }
+  ],
+  "categories": {
+    "customer_interaction": {
+      "label": "Customer Interaction",
+      "description": "Customer interaction reflects how reliably the business responds to customers, follows through on commitments, maintains visibility into customer status, and preserves service quality under pressure. Weaknesses here often reveal deeper issues in ownership, operating discipline, and coordination.",
+      "subcategories": {
+        "response_management": {
+          "label": "Response Management",
+          "description": "How consistently and predictably the business acknowledges and responds to customer inquiries, requests, and issues.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Customer communication is inconsistent or frequently missed. Some inquiries receive no meaningful response at all, and response timing is unpredictable from one situation to the next.",
+              "why_it_happens": "Responsibility for communication is not clearly defined. The business treats response work as an interruption rather than a managed obligation, so action depends on who happens to notice and act.",
+              "what_it_is_costing": "This creates silent revenue loss, damages trust, and makes the business appear unreliable. Staff also lose time trying to reconstruct missed conversations or recover neglected requests.",
+              "what_is_preventing_maturity": "There is no shared response standard, no clear ownership model, and no simple mechanism for ensuring that every inquiry is acknowledged and progressed."
+            },
+            "1": {
+              "what_is_happening": "Most inquiries eventually receive a response, but the experience varies. Some customers get prompt attention while others wait because responsiveness depends on workload and individual effort.",
+              "why_it_happens": "The business values responsiveness, but that value has not yet been translated into a consistent operating routine. Expectations remain informal rather than enforced.",
+              "what_it_is_costing": "The customer experience is uneven. Opportunities are not lost everywhere, but they are lost unpredictably, which makes performance difficult to stabilize and improve.",
+              "what_is_preventing_maturity": "The business has not established a reliable minimum expectation for response timing, ownership, and escalation when normal follow-through slips."
+            },
+            "2": {
+              "what_is_happening": "The business generally responds in a recognizable pattern. Customers usually receive timely attention, though lapses still occur during busy periods or handoffs.",
+              "why_it_happens": "A process exists, but it is not fully resilient. Performance still depends partly on individual discipline and breaks down when demand or complexity increases.",
+              "what_it_is_costing": "The business performs reasonably well but still creates friction at the edges. Those gaps limit scalability and make service quality less dependable under pressure.",
+              "what_is_preventing_maturity": "The process is not yet reinforced by enough visibility, backup ownership, or workload management to ensure consistent performance in all conditions."
+            },
+            "3": {
+              "what_is_happening": "Customer responses are timely, predictable, and clearly owned. The business maintains responsiveness even when activity increases or key people are unavailable.",
+              "why_it_happens": "Responsiveness is treated as a managed capability supported by clear expectations, ownership, and practical reinforcement rather than personal vigilance alone.",
+              "what_it_is_costing": "Very little. The business benefits from higher trust, stronger conversion reliability, and smoother coordination.",
+              "what_is_preventing_maturity": "Structural barriers are minimal. Further improvement depends mainly on selective optimization rather than fixing foundational weaknesses."
+            }
+          }
+        },
+        "follow_up_discipline": {
+          "label": "Follow-Up Discipline",
+          "description": "Whether inquiries, leads, and open customer issues are carried through to completion instead of being forgotten after initial contact.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Customer inquiries, leads, and unresolved issues frequently drop off after the initial interaction. Important follow-through is missed altogether.",
+              "why_it_happens": "The business has no dependable method for tracking open customer obligations. Continuity depends on memory, inbox scanning, or personal reminders.",
+              "what_it_is_costing": "The business loses revenue, leaves customer issues unresolved, and erodes confidence without always seeing the full impact.",
+              "what_is_preventing_maturity": "There is no visible queue of open commitments, no follow-up ownership, and no expectation that interactions must move toward a clear next step or closure."
+            },
+            "1": {
+              "what_is_happening": "Some follow-up occurs, but it is inconsistent. The business catches many items, yet a noticeable number still fall through the cracks.",
+              "why_it_happens": "People understand that follow-up matters, but the habit is not supported by a reliable system. Personal initiative is doing work that structure should be doing.",
+              "what_it_is_costing": "Effort does not convert into results as efficiently as it should. The business creates demand or customer interest, but fails to protect enough of that value through completion.",
+              "what_is_preventing_maturity": "Open items are not visible enough, and accountability for follow-through is not explicit enough to make completion dependable."
+            },
+            "2": {
+              "what_is_happening": "The business has a recognizable method for revisiting customer interactions. Most important items receive follow-up, though gaps still appear under stress or when volume rises.",
+              "why_it_happens": "The intent and process are present, but the discipline is not yet fully embedded in everyday work. Some steps still rely on personal consistency rather than systemic support.",
+              "what_it_is_costing": "Lost opportunities are less common, but inconsistency still reduces efficiency and weakens customer confidence when exceptions occur.",
+              "what_is_preventing_maturity": "The business needs stronger visibility into open items, clearer time expectations, and more consistent ownership across the interaction lifecycle."
+            },
+            "3": {
+              "what_is_happening": "Follow-up is systematic, visible, and rarely missed. Customer interactions move through a clear progression toward resolution, sale, or an intentional close.",
+              "why_it_happens": "The business has embedded completion discipline into normal operations. Open commitments are visible, owned, and regularly advanced.",
+              "what_it_is_costing": "Very little. Opportunity leakage is low and the business protects the value created by its customer and marketing efforts.",
+              "what_is_preventing_maturity": "There are few structural barriers left. Remaining gains would come from targeted refinement or increased speed rather than foundational correction."
+            }
+          }
+        },
+        "customer_visibility": {
+          "label": "Customer Visibility",
+          "description": "The business's ability to understand customer status, history, open issues, and next steps without excessive reconstruction.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "The business often cannot tell where a customer stands, what has already happened, or what should happen next. Information is scattered or missing.",
+              "why_it_happens": "Customer knowledge lives in individual inboxes, memories, side conversations, or disconnected tools rather than in a shared, accessible view.",
+              "what_it_is_costing": "Time is wasted reconstructing situations. Decisions are delayed, handoffs are clumsy, and errors increase because people act without full context.",
+              "what_is_preventing_maturity": "There is no reliable, shared method for capturing customer status and next steps in a way that others can use quickly and confidently."
+            },
+            "1": {
+              "what_is_happening": "Some customer information exists, but it is fragmented. The business can usually piece together the story, though it often takes effort.",
+              "why_it_happens": "Visibility has grown informally rather than by design. Useful information exists, but not in a unified or consistently maintained form.",
+              "what_it_is_costing": "Coordination slows down. Customers may receive repetitive questions, delayed answers, or inconsistent handling because the full picture is hard to access.",
+              "what_is_preventing_maturity": "The business lacks a simple discipline for maintaining shared visibility into status, ownership, and next actions."
+            },
+            "2": {
+              "what_is_happening": "Customer status is generally known. The business can usually determine what is happening and what is needed, though not always immediately.",
+              "why_it_happens": "Basic visibility mechanisms are in place, but they are not yet as current, accessible, or universally used as they need to be.",
+              "what_it_is_costing": "The business operates with moderate control, but still spends more effort than necessary on coordination and clarification.",
+              "what_is_preventing_maturity": "Information quality and accessibility are not yet strong enough to support seamless handoffs and rapid decision-making."
+            },
+            "3": {
+              "what_is_happening": "Customer status, history, and next steps are clear and accessible. People can act with confidence because the necessary context is visible.",
+              "why_it_happens": "The business has built customer visibility into its normal operating rhythm rather than leaving it to memory or individual workarounds.",
+              "what_it_is_costing": "Very little. Time lost to reconstruction is minimal and coordination is efficient.",
+              "what_is_preventing_maturity": "Only marginal optimization remains, such as improving speed or reporting depth."
+            }
+          }
+        },
+        "capacity_under_load": {
+          "label": "Capacity Under Load",
+          "description": "The ability to maintain service quality, communication standards, and follow-through when demand increases.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Customer experience breaks down when demand rises. Response times slip, issues accumulate, and service becomes visibly inconsistent.",
+              "why_it_happens": "The business is operating near or beyond true capacity, with too little redundancy and too much dependence on a few people or informal coordination.",
+              "what_it_is_costing": "Growth creates strain instead of benefit. The business loses trust precisely when opportunity is increasing.",
+              "what_is_preventing_maturity": "Processes, staffing patterns, ownership, and service expectations are not designed to absorb variation in demand."
+            },
+            "1": {
+              "what_is_happening": "The business can manage normal demand but struggles noticeably during busier periods. Backlogs form and communication becomes less dependable.",
+              "why_it_happens": "Capacity planning is weak, and service routines do not flex well under pressure. The system works only in ordinary conditions.",
+              "what_it_is_costing": "Peaks create customer dissatisfaction, internal stress, and inconsistent revenue capture.",
+              "what_is_preventing_maturity": "The business has not defined how service should be preserved when volume rises or who absorbs overflow without quality loss."
+            },
+            "2": {
+              "what_is_happening": "The business generally handles moderate increases in activity, though strain is still visible at higher volumes.",
+              "why_it_happens": "Some capacity discipline exists, but resilience is incomplete. The business can absorb variation up to a point but still relies on extra effort to do so.",
+              "what_it_is_costing": "The business performs reasonably well but still experiences efficiency loss and service friction when demand spikes.",
+              "what_is_preventing_maturity": "Capacity expectations, backup ownership, and workload-balancing mechanisms are not yet strong enough to make performance stable at expected volumes."
+            },
+            "3": {
+              "what_is_happening": "Service quality remains stable even as demand rises. The business can absorb fluctuations without obvious breakdown in communication or follow-through.",
+              "why_it_happens": "Workload, ownership, and response routines are designed for resilience rather than best-case conditions only.",
+              "what_it_is_costing": "Very little. Growth is more likely to be captured effectively instead of destabilizing service.",
+              "what_is_preventing_maturity": "Remaining improvements are mostly about fine-tuning efficiency or expanding capacity further."
+            }
+          }
+        }
+      }
+    },
+    "marketing": {
+      "label": "Marketing",
+      "description": "Marketing reflects the business's ability to create demand, communicate its value clearly, understand what is working, and convert interest into actual customers.",
+      "subcategories": {
+        "demand_generation": {
+          "label": "Demand Generation",
+          "description": "How intentionally the business creates new customer interest instead of depending on chance, referrals, or passive visibility.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "New business arrives unpredictably. Growth depends largely on referrals, chance encounters, or existing relationships rather than deliberate effort.",
+              "why_it_happens": "The business has not established a repeatable approach to creating awareness and interest. Marketing is not being run as a business capability.",
+              "what_it_is_costing": "Revenue is unstable, planning is difficult, and the business remains vulnerable to slow periods it did not see coming.",
+              "what_is_preventing_maturity": "There is no repeatable method, consistent channel rhythm, or clear demand-generation discipline that produces opportunities reliably."
+            },
+            "1": {
+              "what_is_happening": "Marketing activity occurs occasionally, usually in response to slow demand or a perceived need for more leads. Activity is real, but inconsistent.",
+              "why_it_happens": "Marketing is reactive rather than planned. The business treats it as something to do when business is light instead of a continuous system.",
+              "what_it_is_costing": "Effort does not compound. Results are inconsistent, and the business struggles to build sustained momentum in the market.",
+              "what_is_preventing_maturity": "The business lacks a steady marketing rhythm, clear accountability, and a deliberate approach that continues even when operations become busy."
+            },
+            "2": {
+              "what_is_happening": "Marketing happens regularly and the business is deliberately trying to create demand, but outcomes are still uneven or difficult to forecast.",
+              "why_it_happens": "A structure is emerging, but it is not yet refined enough to create predictable results across channels and campaigns.",
+              "what_it_is_costing": "The business generates more opportunity than before, but with too much variability to fully trust the pipeline.",
+              "what_is_preventing_maturity": "The system needs stronger consistency, better feedback, and more disciplined refinement to make opportunity creation dependable."
+            },
+            "3": {
+              "what_is_happening": "Demand generation is intentional, repeatable, and aligned to business goals. The business can create new opportunities with reasonable predictability.",
+              "why_it_happens": "Marketing is treated as a managed capability with clear rhythm, ownership, and learning loops.",
+              "what_it_is_costing": "Very little. The business is better positioned to plan, grow, and respond strategically.",
+              "what_is_preventing_maturity": "Only selective optimization remains, such as improving efficiency by channel or sharpening targeting."
+            }
+          }
+        },
+        "messaging_clarity": {
+          "label": "Messaging Clarity",
+          "description": "How clearly the business explains what it does, who it serves, and why it matters.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "The business struggles to explain its value clearly. Messaging is vague, inconsistent, or too generic to create strong interest.",
+              "why_it_happens": "The business has not fully clarified its positioning, audience, or differentiators. Internal understanding may be stronger than external expression.",
+              "what_it_is_costing": "Potential customers do not quickly understand why they should engage. Interest is weaker, lower-quality leads are attracted, and differentiation suffers.",
+              "what_is_preventing_maturity": "The business has not distilled a clear value proposition into repeatable language that works across channels and conversations."
+            },
+            "1": {
+              "what_is_happening": "The business can usually describe itself, but the message shifts across people, channels, or situations. Some explanations are strong, others are not.",
+              "why_it_happens": "Messaging exists, but it is loosely held rather than deliberately shaped and reinforced.",
+              "what_it_is_costing": "The market receives an inconsistent signal. This weakens trust, lowers conversion quality, and makes marketing less efficient.",
+              "what_is_preventing_maturity": "The business needs sharper positioning and more consistent use of the same core message across touchpoints."
+            },
+            "2": {
+              "what_is_happening": "The value proposition is reasonably clear and most external communication is aligned, though some refinement is still needed.",
+              "why_it_happens": "The business has done real work on its message, but not enough to eliminate ambiguity or ensure consistent impact in every context.",
+              "what_it_is_costing": "The business performs adequately, but still loses some effectiveness due to avoidable confusion or diluted emphasis.",
+              "what_is_preventing_maturity": "Further maturity requires message refinement, stronger discipline across channels, and better alignment between promise and audience need."
+            },
+            "3": {
+              "what_is_happening": "Messaging is clear, focused, and consistently understood. The business communicates its value in a way that attracts the right audience with little ambiguity.",
+              "why_it_happens": "The organization has clarified its position and translated it into disciplined language that is used consistently.",
+              "what_it_is_costing": "Very little. Marketing and sales effort benefit from stronger audience fit and less confusion.",
+              "what_is_preventing_maturity": "Only incremental refinement remains, such as sharpening messages for specific segments or offers."
+            }
+          }
+        },
+        "measurement_feedback": {
+          "label": "Measurement & Feedback",
+          "description": "The ability to evaluate which marketing efforts are producing results and use that knowledge to improve decisions.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Marketing decisions are made with little or no reliable feedback. The business does not know what is working or why.",
+              "why_it_happens": "Little measurement exists, or measurement is too weak to inform decisions. The business is operating on impression, hope, or anecdote.",
+              "what_it_is_costing": "Time and money are spent without clear learning. Weak activities continue too long and stronger ones are not recognized or expanded.",
+              "what_is_preventing_maturity": "The business lacks a small, meaningful set of measures and the discipline to review them regularly."
+            },
+            "1": {
+              "what_is_happening": "Some marketing signals are observed, but they are informal, incomplete, or inconsistently tracked.",
+              "why_it_happens": "The business recognizes that feedback matters but has not yet built a stable measurement habit.",
+              "what_it_is_costing": "Improvement is slow because insight is partial. The business can sense what might be working but cannot act with enough confidence.",
+              "what_is_preventing_maturity": "Metrics, review routines, and decision discipline are not yet strong enough to turn observation into learning."
+            },
+            "2": {
+              "what_is_happening": "The business tracks key indicators and has some visibility into marketing performance, but does not consistently act on that information.",
+              "why_it_happens": "Measurement exists, but the connection between insight and decision-making is still weak or intermittent.",
+              "what_it_is_costing": "The business leaves improvement potential on the table. Better data exists than the business is currently using effectively.",
+              "what_is_preventing_maturity": "The business needs a tighter loop between measurement, interpretation, and adjustment."
+            },
+            "3": {
+              "what_is_happening": "Marketing performance is measured, understood, and used to improve outcomes. Decisions are guided by evidence rather than assumption alone.",
+              "why_it_happens": "The business has embedded feedback into normal marketing management and uses it to refine its approach.",
+              "what_it_is_costing": "Very little. The business learns faster and allocates effort more effectively.",
+              "what_is_preventing_maturity": "Only higher-order optimization remains, such as more advanced segmentation or better attribution precision."
+            }
+          }
+        },
+        "conversion_effectiveness": {
+          "label": "Conversion Effectiveness",
+          "description": "How effectively the business turns interest, inquiries, and leads into actual customers.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "There is substantial drop-off between customer interest and completed business. Interest is generated, but too little of it becomes revenue.",
+              "why_it_happens": "The path from inquiry to decision is unclear, inconsistent, or poorly supported. Follow-through, messaging, trust, and timing may all be weak.",
+              "what_it_is_costing": "The business wastes opportunity it has already paid to create. Revenue efficiency is low and growth remains harder than it should be.",
+              "what_is_preventing_maturity": "The business lacks a disciplined conversion process that protects interest and helps prospects move toward a decision."
+            },
+            "1": {
+              "what_is_happening": "Some leads convert, but the process is uneven. Results depend on the prospect, the person handling the interaction, or timing.",
+              "why_it_happens": "There is some conversion ability, but not enough consistency in qualification, follow-up, message alignment, or closing discipline.",
+              "what_it_is_costing": "The business captures value inconsistently. Conversion performance is good enough to sustain activity, but not strong enough to maximize it.",
+              "what_is_preventing_maturity": "The business needs more visible conversion stages, stronger follow-through, and clearer understanding of where drop-off occurs."
+            },
+            "2": {
+              "what_is_happening": "The business converts a reasonable share of opportunities, though inefficiencies and drop-off still exist.",
+              "why_it_happens": "The core process is functional, but not yet refined enough to produce highly dependable outcomes across conditions.",
+              "what_it_is_costing": "Revenue is being realized, but not at the level the business could reach with better consistency and insight.",
+              "what_is_preventing_maturity": "Further maturity requires better diagnosis of conversion friction and more deliberate refinement of the path from interest to commitment."
+            },
+            "3": {
+              "what_is_happening": "The business reliably turns qualified interest into customers and continues refining how it does so.",
+              "why_it_happens": "Conversion is supported by clear messaging, disciplined follow-through, and a consistent progression from inquiry to decision.",
+              "what_it_is_costing": "Very little. The business captures a high share of the value created by its customer and marketing activity.",
+              "what_is_preventing_maturity": "Only targeted optimization remains, such as improving segment-specific conversion or shortening cycle time."
+            }
+          }
+        }
+      }
+    },
+    "operations": {
+      "label": "Operations",
+      "description": "Operations reflect how work gets done inside the business: how clearly it is defined, how consistently it is executed, how much waste is created through rework, and how well the business handles growth.",
+      "subcategories": {
+        "process_definition": {
+          "label": "Process Definition",
+          "description": "The clarity of how core work is performed and how much of that work depends on improvisation instead of known routines.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Work is largely improvised. Different people handle the same activity in different ways, and results vary widely.",
+              "why_it_happens": "The business has not clearly defined how important work should be done. Knowledge remains mostly implicit and person-dependent.",
+              "what_it_is_costing": "Confusion, inconsistency, and inefficiency are high. Training is difficult, handoffs are weak, and performance changes with the person doing the work.",
+              "what_is_preventing_maturity": "There is no stable process foundation to reinforce, improve, or scale."
+            },
+            "1": {
+              "what_is_happening": "Some routines exist, but they are informal and inconsistently applied. People generally know what should happen, but not with enough precision or consistency.",
+              "why_it_happens": "Processes have emerged organically rather than by deliberate design. Useful habits exist, but they are not strong enough to govern behavior reliably.",
+              "what_it_is_costing": "The business performs better than pure chaos, but still loses time and quality to avoidable variation and confusion.",
+              "what_is_preventing_maturity": "The business has not translated informal know-how into clearly understood, repeatable operating routines."
+            },
+            "2": {
+              "what_is_happening": "Core processes are generally understood and most important work follows a recognizable path, though variation still appears under pressure.",
+              "why_it_happens": "The business has defined much of its workflow, but not enough to eliminate exceptions, interpretation gaps, or drift in execution.",
+              "what_it_is_costing": "Performance is moderately reliable, but avoidable inefficiency and inconsistency still limit leverage.",
+              "what_is_preventing_maturity": "The process foundation needs better reinforcement, current-state clarity, and more consistent use across people and situations."
+            },
+            "3": {
+              "what_is_happening": "Core work is performed through clear, stable, and repeatable processes. People know what good execution looks like and can perform it consistently.",
+              "why_it_happens": "The business has translated its operating knowledge into disciplined routines that support reliable execution.",
+              "what_it_is_costing": "Very little. The business benefits from stability, easier training, and more predictable outcomes.",
+              "what_is_preventing_maturity": "Only selective refinement remains, such as reducing steps, improving handoffs, or streamlining exceptions."
+            }
+          }
+        },
+        "execution_consistency": {
+          "label": "Execution Consistency",
+          "description": "How reliably the business performs work as intended across people, days, and varying conditions.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Outcomes vary dramatically depending on who performs the work or what else is going on. The business cannot rely on consistent execution.",
+              "why_it_happens": "Process discipline is weak, expectations are uneven, and work depends too much on personal style and situational judgment.",
+              "what_it_is_costing": "Reliability suffers, customers receive inconsistent outcomes, and managers must spend time correcting or compensating for variation.",
+              "what_is_preventing_maturity": "The business lacks enough shared standards and reinforcement to make execution predictable."
+            },
+            "1": {
+              "what_is_happening": "Some consistency exists, but variation remains common. The business can perform adequately, though not reliably enough to remove concern.",
+              "why_it_happens": "Good practice exists, but it is not yet strong enough to hold under different workloads, people, or competing priorities.",
+              "what_it_is_costing": "The business loses efficiency and trust because outcomes are too dependent on conditions rather than capability.",
+              "what_is_preventing_maturity": "Standards and routines are not yet enforced or visible enough to reduce variation consistently."
+            },
+            "2": {
+              "what_is_happening": "Most work follows a consistent pattern, with occasional deviation or slippage. Reliability is present but not complete.",
+              "why_it_happens": "The business has working routines, but not all exceptions and pressure points are adequately managed.",
+              "what_it_is_costing": "The business performs well most of the time, though edge cases still create avoidable friction and management effort.",
+              "what_is_preventing_maturity": "Further maturity depends on strengthening consistency in the places where work still drifts under stress."
+            },
+            "3": {
+              "what_is_happening": "Execution is reliable and predictable across people and circumstances. The business can trust that intended work will be performed in the expected way.",
+              "why_it_happens": "Standards, routines, and oversight are aligned strongly enough to produce stable execution.",
+              "what_it_is_costing": "Very little. Reliability supports smoother planning, better customer outcomes, and lower supervisory burden.",
+              "what_is_preventing_maturity": "Only focused optimization remains, such as increasing speed or simplifying complexity."
+            }
+          }
+        },
+        "rework_error_rate": {
+          "label": "Rework & Error Rate",
+          "description": "How much effort is consumed by mistakes, corrections, duplication, and avoidable backtracking instead of forward progress.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Errors, rework, and duplicated effort are frequent enough to disrupt normal operations. The business spends a significant portion of its energy fixing work that should have been right the first time.",
+              "why_it_happens": "Processes are weak, expectations are unclear, and execution varies too much. Problems are often discovered late, after they have already created downstream disruption.",
+              "what_it_is_costing": "Capacity is consumed by correction instead of progress. Delivery slows, morale drops, and customers experience inconsistency or delay.",
+              "what_is_preventing_maturity": "The business lacks stable process discipline, error visibility, and preventive controls strong enough to reduce recurring mistakes."
+            },
+            "1": {
+              "what_is_happening": "Issues occur regularly and require ongoing correction. The business is moving forward, but with too much avoidable drag.",
+              "why_it_happens": "Some routines exist, but they are not reliable enough to prevent repeated mistakes or weak handoffs.",
+              "what_it_is_costing": "Efficiency is materially reduced. The business gets less output from the same effort because too much time is spent revisiting work.",
+              "what_is_preventing_maturity": "Root causes are not being addressed consistently enough, so the same kinds of defects continue to reappear."
+            },
+            "2": {
+              "what_is_happening": "Errors still occur, but they are generally manageable and do not dominate the operation. Rework is present, though not overwhelming.",
+              "why_it_happens": "The business has enough structure to contain many issues, but not enough to prevent all recurring sources of waste.",
+              "what_it_is_costing": "Some capacity is still lost to correction and backtracking, limiting efficiency and throughput.",
+              "what_is_preventing_maturity": "Further progress requires better identification of recurring defect patterns and stronger prevention at the source."
+            },
+            "3": {
+              "what_is_happening": "Errors are minimized, and when they do occur they are identified and resolved quickly. Rework no longer dominates the flow of work.",
+              "why_it_happens": "The business has strong process clarity, disciplined execution, and enough visibility to catch problems early.",
+              "what_it_is_costing": "Very little. Capacity is spent primarily on forward progress rather than correction.",
+              "what_is_preventing_maturity": "Only incremental improvement remains, such as reducing rare exceptions or tightening cycle efficiency."
+            }
+          }
+        },
+        "scalability": {
+          "label": "Scalability of Work",
+          "description": "The business's ability to handle increased workload or growth without breakdown in quality, coordination, or throughput.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "The business breaks under increased demand. Work backs up, errors rise, and people rely on heroics just to stay afloat.",
+              "why_it_happens": "The operating model is fragile and depends on informal coordination, a few key people, or low demand conditions.",
+              "what_it_is_costing": "Growth becomes destabilizing rather than beneficial. The business cannot reliably capture opportunity without damaging execution.",
+              "what_is_preventing_maturity": "Processes, ownership, and workload management are not robust enough to absorb volume without visible breakdown."
+            },
+            "1": {
+              "what_is_happening": "The business can absorb some growth, but strain appears quickly. Delays, confusion, and overload increase as volume rises.",
+              "why_it_happens": "The core system works only within a narrow operating range. It has limited slack and too much dependence on extra effort during peaks.",
+              "what_it_is_costing": "Expansion carries disproportionate cost in stress, inconsistency, and lost throughput.",
+              "what_is_preventing_maturity": "The business lacks scalable routines, backup capacity, and a clearer design for how work should flow at higher volume."
+            },
+            "2": {
+              "what_is_happening": "The business can handle moderate growth, though strain is still visible. Performance is mostly preserved, but not without effort.",
+              "why_it_happens": "There is some structural strength, but resilience is incomplete. Scaling still requires extra attention rather than being naturally supported.",
+              "what_it_is_costing": "Growth is possible, but less efficient than it should be. Managers and key staff still absorb too much of the scaling burden.",
+              "what_is_preventing_maturity": "Further maturity depends on stronger workload balancing, clearer exception handling, and less dependence on heroic effort."
+            },
+            "3": {
+              "what_is_happening": "The business scales smoothly. Increased volume can be absorbed without major decline in quality, coordination, or timing.",
+              "why_it_happens": "Processes, ownership, and capacity discipline are strong enough to support growth rather than merely survive it.",
+              "what_it_is_costing": "Very little. Growth is more likely to produce value instead of instability.",
+              "what_is_preventing_maturity": "Only strategic optimization remains, such as improving margin, speed, or cross-functional integration at larger scale."
+            }
+          }
+        }
+      }
+    },
+    "time_usage": {
+      "label": "Time Usage",
+      "description": "Time usage reflects how effectively the business converts effort into meaningful progress. It reveals whether work is dominated by reaction, overload, and centralized decision making, or supported by focus, delegation, and planning.",
+      "subcategories": {
+        "reactive_vs_planned": {
+          "label": "Reactive vs Planned Work",
+          "description": "The balance between urgent response work and intentional work tied to priorities, planning, and improvement.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Most time is spent reacting to immediate issues. Planned work is regularly displaced by interruptions, emergencies, or unresolved operational problems.",
+              "why_it_happens": "Instability elsewhere in the business constantly generates urgent work. Priorities exist, but the operating environment does not protect them.",
+              "what_it_is_costing": "The business struggles to make strategic progress. Energy is consumed, but improvement is limited because effort is absorbed by the present instead of invested in the future.",
+              "what_is_preventing_maturity": "The root causes of recurring disruption have not been reduced enough to free time for consistent priority-driven work."
+            },
+            "1": {
+              "what_is_happening": "Some planned work occurs, but it is frequently interrupted. Progress happens in starts and stops rather than through sustained focus.",
+              "why_it_happens": "The business is trying to plan ahead, but it still allows urgent work to dominate because responsibilities, priorities, or escalation paths are not yet controlled.",
+              "what_it_is_costing": "Important work is delayed or fragmented. Momentum is weak, and the business spends too much cognitive energy switching contexts.",
+              "what_is_preventing_maturity": "The business has not yet created enough discipline around priorities, interruption handling, and recurring problem reduction."
+            },
+            "2": {
+              "what_is_happening": "There is a workable balance between reactive and planned activity. The business can make progress on important work, though disruption still occurs.",
+              "why_it_happens": "The organization has developed some control over priorities, but not enough to keep reactive work fully contained.",
+              "what_it_is_costing": "Progress is real, but slower and less efficient than it could be. Too much effort is still diverted by avoidable urgency.",
+              "what_is_preventing_maturity": "Further maturity requires reducing recurring sources of disruption and protecting focused execution more consistently."
+            },
+            "3": {
+              "what_is_happening": "Time is primarily directed toward planned priorities. Reactive work still exists, but it is contained and does not dominate the business.",
+              "why_it_happens": "The business has enough stability, ownership, and prioritization discipline to keep urgent work from displacing what matters most.",
+              "what_it_is_costing": "Very little. The business can invest energy in strategic progress and improvement instead of remaining trapped in immediate response.",
+              "what_is_preventing_maturity": "Only targeted refinement remains, such as increasing planning quality or improving cross-functional timing."
+            }
+          }
+        },
+        "focus_protection": {
+          "label": "Focus Protection",
+          "description": "The business's ability to protect uninterrupted time for important work instead of forcing constant switching and fragmentation.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Focused work is rare. People are constantly interrupted, forced to multitask, or pulled into issues that break concentration.",
+              "why_it_happens": "The business has weak boundaries around urgent work, poor coordination, and too little discipline in how work enters the day.",
+              "what_it_is_costing": "Productivity drops, quality suffers, and cognitive fatigue rises. Even simple tasks take longer because work is repeatedly restarted.",
+              "what_is_preventing_maturity": "There are no effective norms or structures protecting focused effort from constant interruption."
+            },
+            "1": {
+              "what_is_happening": "Focused work happens occasionally, but it is easily disrupted. The business gets bursts of progress rather than sustained momentum.",
+              "why_it_happens": "Some awareness exists that focus matters, but interruption patterns and operating habits still overwhelm that intent.",
+              "what_it_is_costing": "Throughput is lower than it should be and people spend too much energy regaining context after interruptions.",
+              "what_is_preventing_maturity": "The business has not yet built enough control over communication, escalation, and work intake to protect attention consistently."
+            },
+            "2": {
+              "what_is_happening": "The business can usually protect some time for important work, though interruptions still create periodic fragmentation.",
+              "why_it_happens": "The organization has partial discipline around focus, but not enough to eliminate interruption-heavy patterns in all conditions.",
+              "what_it_is_costing": "Performance is solid but still less efficient than it could be. Some important work takes longer than necessary.",
+              "what_is_preventing_maturity": "Further maturity requires stronger norms, clearer boundaries, and better management of avoidable interruption."
+            },
+            "3": {
+              "what_is_happening": "Important work is generally protected from disruption. People can sustain concentration long enough to complete meaningful work efficiently.",
+              "why_it_happens": "The business has created practical discipline around communication, interruption handling, and work prioritization.",
+              "what_it_is_costing": "Very little. Focused effort supports stronger output quality and lower cognitive waste.",
+              "what_is_preventing_maturity": "Only incremental refinement remains, such as improving timing coordination across teams."
+            }
+          }
+        },
+        "delegation_distribution": {
+          "label": "Delegation & Distribution",
+          "description": "How effectively work and responsibility are distributed across the business instead of remaining concentrated in a few people.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Work is concentrated in a few individuals, creating overload, delay, and dependency. The business is vulnerable when those people are unavailable.",
+              "why_it_happens": "Responsibilities have not been distributed clearly enough, and too much of the business still relies on trusted individuals rather than transferable capability.",
+              "what_it_is_costing": "Throughput is limited, resilience is weak, and leaders or specialists become bottlenecks for normal work.",
+              "what_is_preventing_maturity": "The business has not clarified ownership broadly enough or built enough confidence in others to distribute work sustainably."
+            },
+            "1": {
+              "what_is_happening": "Some delegation exists, but key people remain overloaded and central to too much of the work.",
+              "why_it_happens": "The business is beginning to spread responsibility, but roles, expectations, or trust are not yet strong enough to reduce concentration meaningfully.",
+              "what_it_is_costing": "Growth and execution are both constrained because work still pools around a few individuals.",
+              "what_is_preventing_maturity": "The organization needs clearer ownership, stronger handoffs, and more disciplined development of distributed capability."
+            },
+            "2": {
+              "what_is_happening": "Work is reasonably distributed, though a few dependencies and overload points still remain.",
+              "why_it_happens": "The business has done real work to spread responsibility, but not enough to eliminate all bottlenecks or exceptions.",
+              "what_it_is_costing": "Operations are functional, but some efficiency and resilience are still lost when workload spikes or key people are drawn into too many decisions.",
+              "what_is_preventing_maturity": "Further maturity requires reducing the last major dependency points and strengthening confidence in broader ownership."
+            },
+            "3": {
+              "what_is_happening": "Work and responsibility are well distributed. The business does not depend excessively on specific individuals for routine performance.",
+              "why_it_happens": "Ownership is clear, capability is spread across the organization, and handoffs are strong enough to sustain reliable execution.",
+              "what_it_is_costing": "Very little. The business is more resilient, scalable, and less vulnerable to individual overload.",
+              "what_is_preventing_maturity": "Only selective refinement remains, such as improving role clarity in edge cases or expanding cross-training."
+            }
+          }
+        },
+        "decision_load": {
+          "label": "Decision Load",
+          "description": "How much routine decision-making remains concentrated in leadership or a few central figures instead of being handled at the right level.",
+          "ratings": {
+            "0": {
+              "what_is_happening": "Leadership is required for a large share of normal decisions. Work stalls or slows because too many issues must be elevated.",
+              "why_it_happens": "Decision rights are unclear, trust is limited, and operating standards are not strong enough to support local judgment.",
+              "what_it_is_costing": "Leaders become bottlenecks, responsiveness slows, and the business loses both speed and capacity for higher-level work.",
+              "what_is_preventing_maturity": "The business has not pushed enough clarity, authority, and confidence outward to reduce central decision dependence."
+            },
+            "1": {
+              "what_is_happening": "Some decisions are delegated, but leadership is still pulled into many matters that should not require that level of attention.",
+              "why_it_happens": "Delegation has begun, but boundaries, standards, or confidence are not yet strong enough to support broader autonomy.",
+              "what_it_is_costing": "Leadership time is fragmented and lower-level work waits too often for approval or interpretation.",
+              "what_is_preventing_maturity": "The business needs clearer decision frameworks and stronger distribution of authority."
+            },
+            "2": {
+              "what_is_happening": "Many routine decisions are handled appropriately, though a few recurring bottlenecks still draw work upward.",
+              "why_it_happens": "The business has established some effective delegation, but not enough to remove all avoidable escalation.",
+              "what_it_is_costing": "Decision-making is functional, but some speed and leadership capacity are still lost unnecessarily.",
+              "what_is_preventing_maturity": "Further maturity depends on clarifying edge-case authority and reducing repeated escalation patterns."
+            },
+            "3": {
+              "what_is_happening": "Decision-making is distributed at the appropriate level. Leadership is involved where it adds value, not because the system cannot function without it.",
+              "why_it_happens": "Roles, standards, and confidence are aligned strongly enough to support effective decentralized judgment.",
+              "what_it_is_costing": "Very little. The business moves faster and leadership time can be used for higher-order priorities.",
+              "what_is_preventing_maturity": "Only targeted refinement remains, such as improving decision quality in complex exceptions."
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,979 @@
+{
+  "framework_name": "SIMA360 Adaptive Business Questions",
+  "version": "1.0",
+  "purpose": "Adaptive business assessment questions that identify business needs independent of AI. Questions are organized by category and subcategory so a program can ask initial categorization questions, then trigger deeper follow-up questions and map the results to businessresults.json.",
+  "rating_scale": {
+    "0": "Chaotic",
+    "1": "Ad Hoc",
+    "2": "Defined",
+    "3": "Managed"
+  },
+  "categories": [
+    {
+      "id": "customer_interaction",
+      "label": "Customer Interaction",
+      "description": "Questions about how reliably the business responds to customers, follows through, maintains visibility, and handles load.",
+      "subcategories": [
+        {
+          "id": "response_management",
+          "label": "Response Management",
+          "initial_question": {
+            "id": "ci_rm_01",
+            "text": "How consistently does the business respond to customer inquiries or requests in a timely way?",
+            "options": [
+              {
+                "text": "Responses are often missed or highly inconsistent.",
+                "score": 0
+              },
+              {
+                "text": "Responses usually happen, but timing varies a lot.",
+                "score": 1
+              },
+              {
+                "text": "Responses are generally timely, though lapses still occur.",
+                "score": 2
+              },
+              {
+                "text": "Responses are timely, predictable, and clearly owned.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "ci_rm_02",
+                "text": "When responses are missed, what is the most common reason?",
+                "options": [
+                  {
+                    "text": "No one clearly owns the response.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "People are too busy and the work gets lost.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Information is scattered and hard to act on.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We do not really have a response process.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "ci_rm_03",
+                "text": "What most affects response consistency?",
+                "options": [
+                  {
+                    "text": "It depends on who notices the issue first.",
+                    "score_adjustment": -1
+                  },
+                  {
+                    "text": "Busy periods create delays.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Handoffs between people slow us down.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We have a pattern, but it is not always followed.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ],
+            "2": [
+              {
+                "id": "ci_rm_04",
+                "text": "What most often causes the remaining response lapses?",
+                "options": [
+                  {
+                    "text": "Workload spikes.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Backup ownership is unclear.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Some requests are harder to route than others.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Lapses are rare and usually corrected quickly.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "follow_up_discipline",
+          "label": "Follow-Up Discipline",
+          "initial_question": {
+            "id": "ci_fu_01",
+            "text": "How reliably are customer inquiries, leads, or open issues followed through to completion?",
+            "options": [
+              {
+                "text": "Items are frequently forgotten or dropped.",
+                "score": 0
+              },
+              {
+                "text": "Some follow-up happens, but many items still fall through the cracks.",
+                "score": 1
+              },
+              {
+                "text": "Most important items receive follow-up, though gaps still occur.",
+                "score": 2
+              },
+              {
+                "text": "Follow-up is systematic and rarely missed.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "ci_fu_02",
+                "text": "How are open customer commitments usually tracked today?",
+                "options": [
+                  {
+                    "text": "Mostly memory or inboxes.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Paper notes or personal reminders.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "A loose spreadsheet or list that is not maintained consistently.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "There is no real tracking method.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "ci_fu_03",
+                "text": "Why do follow-ups still get missed?",
+                "options": [
+                  {
+                    "text": "Ownership is unclear.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Open items are not visible enough.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "People know what to do, but routine slips under pressure.",
+                    "score_adjustment": 1
+                  },
+                  {
+                    "text": "We revisit items, but not in a disciplined way.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "2": [
+              {
+                "id": "ci_fu_04",
+                "text": "What best describes the remaining follow-up gaps?",
+                "options": [
+                  {
+                    "text": "They happen mainly during busy periods.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "They occur mostly during handoffs.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "They are uncommon and visible when they happen.",
+                    "score_adjustment": 1
+                  },
+                  {
+                    "text": "They are tied to a few types of requests.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "customer_visibility",
+          "label": "Customer Visibility",
+          "initial_question": {
+            "id": "ci_cv_01",
+            "text": "How easy is it to see a customer's status, history, and next steps without having to reconstruct the situation?",
+            "options": [
+              {
+                "text": "It is very difficult; information is scattered or missing.",
+                "score": 0
+              },
+              {
+                "text": "Some information exists, but it is fragmented and hard to trust.",
+                "score": 1
+              },
+              {
+                "text": "We can usually determine the situation, though it takes some effort.",
+                "score": 2
+              },
+              {
+                "text": "Customer status and next steps are clear and accessible.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "ci_cv_02",
+                "text": "Where does customer information usually live?",
+                "options": [
+                  {
+                    "text": "Mostly in people's memory.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "In separate inboxes or personal files.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Across disconnected tools.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "In conversations more than in records.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "ci_cv_03",
+                "text": "What makes customer visibility difficult?",
+                "options": [
+                  {
+                    "text": "Information is incomplete.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Information exists but is not current.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "People track things differently.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We can find it, but it takes too much effort.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "capacity_under_load",
+          "label": "Capacity Under Load",
+          "initial_question": {
+            "id": "ci_cl_01",
+            "text": "What happens to customer service and follow-through when demand increases?",
+            "options": [
+              {
+                "text": "Service breaks down quickly.",
+                "score": 0
+              },
+              {
+                "text": "We manage normal demand, but busy periods create visible strain.",
+                "score": 1
+              },
+              {
+                "text": "We can handle moderate increases, though strain still appears.",
+                "score": 2
+              },
+              {
+                "text": "Service quality remains stable even when demand rises.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "ci_cl_02",
+                "text": "What usually breaks first when volume rises?",
+                "options": [
+                  {
+                    "text": "Response times.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Follow-up and tracking.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Internal coordination.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Quality becomes inconsistent everywhere.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "ci_cl_03",
+                "text": "Why does strain show up during busier periods?",
+                "options": [
+                  {
+                    "text": "We do not have enough backup ownership.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Processes work only at normal volume.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "A few people carry too much of the load.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We recover, but only with extra effort.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "label": "Marketing",
+      "description": "Questions about creating demand, communicating value, measuring effectiveness, and converting interest into customers.",
+      "subcategories": [
+        {
+          "id": "demand_generation",
+          "label": "Demand Generation",
+          "initial_question": {
+            "id": "mk_dg_01",
+            "text": "How intentionally does the business create new customer interest?",
+            "options": [
+              {
+                "text": "New business mostly comes by chance, referrals, or existing relationships.",
+                "score": 0
+              },
+              {
+                "text": "We market occasionally, usually when demand slows down.",
+                "score": 1
+              },
+              {
+                "text": "We market regularly, though results are not yet very predictable.",
+                "score": 2
+              },
+              {
+                "text": "We create demand through an intentional, repeatable approach.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "mk_dg_02",
+                "text": "What best describes current growth sources?",
+                "options": [
+                  {
+                    "text": "Mostly referrals.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Mostly repeat customers.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Mostly word of mouth with little deliberate outreach.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We do not really have a growth system.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "mk_dg_03",
+                "text": "Why is marketing inconsistent?",
+                "options": [
+                  {
+                    "text": "It gets deprioritized when operations get busy.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "No one clearly owns it.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We are unsure what works.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We do some useful things, but not on a schedule.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ],
+            "2": [
+              {
+                "id": "mk_dg_04",
+                "text": "What is keeping demand generation from being more predictable?",
+                "options": [
+                  {
+                    "text": "Channel performance varies too much.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Messaging is not yet sharp enough.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We need better measurement and refinement.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We are close; the system mostly works.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "messaging_clarity",
+          "label": "Messaging Clarity",
+          "initial_question": {
+            "id": "mk_mc_01",
+            "text": "How clearly does the business explain what it does, who it serves, and why it matters?",
+            "options": [
+              {
+                "text": "Our message is unclear, inconsistent, or too generic.",
+                "score": 0
+              },
+              {
+                "text": "We can explain it, but the message shifts too much.",
+                "score": 1
+              },
+              {
+                "text": "Our message is reasonably clear, though it still needs refinement.",
+                "score": 2
+              },
+              {
+                "text": "Our value proposition is clear, focused, and consistently communicated.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "mk_mc_02",
+                "text": "What is the biggest messaging problem today?",
+                "options": [
+                  {
+                    "text": "We are not clear about our differentiators.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We try to say too many things at once.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Different people describe us differently.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We are not sure who our message is really for.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "mk_mc_03",
+                "text": "Where does messaging vary the most?",
+                "options": [
+                  {
+                    "text": "Between people.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Across channels.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Between offers or services.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "The core message is there, but not applied consistently.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "measurement_feedback",
+          "label": "Measurement & Feedback",
+          "initial_question": {
+            "id": "mk_mf_01",
+            "text": "How well does the business understand what marketing efforts are actually producing results?",
+            "options": [
+              {
+                "text": "We do not really know what is working.",
+                "score": 0
+              },
+              {
+                "text": "We notice some signals, but they are not reliable enough to guide decisions.",
+                "score": 1
+              },
+              {
+                "text": "We track useful indicators, though we do not always act on them consistently.",
+                "score": 2
+              },
+              {
+                "text": "We measure performance and use it to improve outcomes.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "mk_mf_02",
+                "text": "What best describes current marketing feedback?",
+                "options": [
+                  {
+                    "text": "Mostly intuition.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Anecdotal feedback from customers.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Occasional signals, but not tracked.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Very little useful feedback exists.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "mk_mf_03",
+                "text": "Why does feedback not drive decisions more effectively?",
+                "options": [
+                  {
+                    "text": "We do not review it consistently.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "The data is incomplete.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We are unsure how to interpret what we see.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Some useful signals exist, but the review habit is weak.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "conversion_effectiveness",
+          "label": "Conversion Effectiveness",
+          "initial_question": {
+            "id": "mk_ce_01",
+            "text": "How effectively does the business turn customer interest into actual business?",
+            "options": [
+              {
+                "text": "A lot of interest drops off before becoming revenue.",
+                "score": 0
+              },
+              {
+                "text": "Some leads convert, but the process is uneven.",
+                "score": 1
+              },
+              {
+                "text": "We convert a reasonable share of opportunities, though inefficiencies remain.",
+                "score": 2
+              },
+              {
+                "text": "We reliably convert qualified interest into customers.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "mk_ce_02",
+                "text": "Where does the biggest drop-off usually occur?",
+                "options": [
+                  {
+                    "text": "After inquiry, before follow-up.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "After initial conversation, before decision.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Because our message does not create enough confidence.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Because there is no disciplined conversion path.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "mk_ce_03",
+                "text": "What most affects conversion consistency?",
+                "options": [
+                  {
+                    "text": "Variation in follow-up.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Variation in who handles the lead.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Weak visibility into where prospects drop off.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We convert reasonably well, just not predictably.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "label": "Operations",
+      "description": "Questions about how clearly work is defined, how consistently it is executed, how much waste is created through rework, and how well the business handles growth.",
+      "subcategories": [
+        {
+          "id": "process_definition",
+          "label": "Process Definition",
+          "initial_question": {
+            "id": "op_pd_01",
+            "text": "How clearly is core work defined in the business?",
+            "options": [
+              {
+                "text": "Work is mostly improvised.",
+                "score": 0
+              },
+              {
+                "text": "Some routines exist, but they are informal and inconsistent.",
+                "score": 1
+              },
+              {
+                "text": "Core processes are generally understood, though variation still occurs.",
+                "score": 2
+              },
+              {
+                "text": "Core work is performed through clear, stable, repeatable processes.",
+                "score": 3
+              }
+            ]
+          },
+          "follow_ups": {
+            "0": [
+              {
+                "id": "op_pd_02",
+                "text": "What best describes how work gets done today?",
+                "options": [
+                  {
+                    "text": "Each person handles it differently.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "People mostly rely on experience and judgment.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "There is little shared process clarity.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Important work is not clearly defined.",
+                    "score_adjustment": 0
+                  }
+                ]
+              }
+            ],
+            "1": [
+              {
+                "id": "op_pd_03",
+                "text": "Why are routines still inconsistent?",
+                "options": [
+                  {
+                    "text": "They are not documented or reinforced.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "Different people interpret them differently.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "They work in some cases, but not others.",
+                    "score_adjustment": 0
+                  },
+                  {
+                    "text": "We have useful habits, but not a strong operating routine.",
+                    "score_adjustment": 1
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "execution_consistency",
+          "label": "Execution Consistency",
+          "initial_question": {
+            "id": "op_ec_01",
+            "text": "How consistent are outcomes when the business performs the same kind of work?",
+            "options": [
+              {
+                "text": "Outcomes vary a lot depending on who does the work or what else is going on.",
+                "score": 0
+              },
+              {
+                "text": "Some consistency exists, but variation is still common.",
+                "score": 1
+              },
+              {
+                "text": "Most work follows a consistent pattern, with occasional deviation.",
+                "score": 2
+              },
+              {
+                "text": "Execution is reliable and predictable across people and circumstances.",
+                "score": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "rework_error_rate",
+          "label": "Rework & Error Rate",
+          "initial_question": {
+            "id": "op_re_01",
+            "text": "How much time does the business spend fixing mistakes, redoing work, or correcting avoidable problems?",
+            "options": [
+              {
+                "text": "A great deal; rework is frequent and disruptive.",
+                "score": 0
+              },
+              {
+                "text": "Issues happen regularly and create ongoing drag.",
+                "score": 1
+              },
+              {
+                "text": "Errors still occur, but they are manageable.",
+                "score": 2
+              },
+              {
+                "text": "Errors are minimized and resolved quickly.",
+                "score": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "scalability",
+          "label": "Scalability of Work",
+          "initial_question": {
+            "id": "op_sc_01",
+            "text": "How well can the business handle growth or increased workload without breakdown?",
+            "options": [
+              {
+                "text": "The business breaks down under increased demand.",
+                "score": 0
+              },
+              {
+                "text": "We can absorb some growth, but strain appears quickly.",
+                "score": 1
+              },
+              {
+                "text": "We can handle moderate growth, though strain is still visible.",
+                "score": 2
+              },
+              {
+                "text": "We scale smoothly without major decline in quality or coordination.",
+                "score": 3
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "time_usage",
+      "label": "Time Usage",
+      "description": "Questions about how effectively the business converts effort into meaningful progress through planning, focus, delegation, and decision distribution.",
+      "subcategories": [
+        {
+          "id": "reactive_vs_planned",
+          "label": "Reactive vs Planned Work",
+          "initial_question": {
+            "id": "tm_rp_01",
+            "text": "How much of the business's time is spent reacting to immediate issues instead of advancing planned priorities?",
+            "options": [
+              {
+                "text": "Most time is reactive.",
+                "score": 0
+              },
+              {
+                "text": "Reactive work still dominates, though some planning occurs.",
+                "score": 1
+              },
+              {
+                "text": "There is a workable balance between reactive and planned work.",
+                "score": 2
+              },
+              {
+                "text": "Time is primarily directed toward planned priorities.",
+                "score": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "focus_protection",
+          "label": "Focus Protection",
+          "initial_question": {
+            "id": "tm_fp_01",
+            "text": "How well does the business protect uninterrupted time for important work?",
+            "options": [
+              {
+                "text": "Focused work is rare because interruptions are constant.",
+                "score": 0
+              },
+              {
+                "text": "Focused work happens occasionally, but it is easily disrupted.",
+                "score": 1
+              },
+              {
+                "text": "We can usually protect some important work time, though interruptions still occur.",
+                "score": 2
+              },
+              {
+                "text": "Important work is generally protected from disruption.",
+                "score": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "delegation_distribution",
+          "label": "Delegation & Distribution",
+          "initial_question": {
+            "id": "tm_dd_01",
+            "text": "How well is work distributed across the business rather than concentrated in a few people?",
+            "options": [
+              {
+                "text": "Work is concentrated in a few people.",
+                "score": 0
+              },
+              {
+                "text": "Some delegation exists, but key people are still overloaded.",
+                "score": 1
+              },
+              {
+                "text": "Work is reasonably distributed, though a few dependencies remain.",
+                "score": 2
+              },
+              {
+                "text": "Work and responsibility are well distributed.",
+                "score": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "decision_load",
+          "label": "Decision Load",
+          "initial_question": {
+            "id": "tm_dl_01",
+            "text": "How much routine decision-making is still concentrated in leadership or a few central people?",
+            "options": [
+              {
+                "text": "Leadership is required for a large share of normal decisions.",
+                "score": 0
+              },
+              {
+                "text": "Some decisions are delegated, but leadership is still pulled into too much.",
+                "score": 1
+              },
+              {
+                "text": "Many routine decisions are handled appropriately, though bottlenecks remain.",
+                "score": 2
+              },
+              {
+                "text": "Decision-making is distributed at the appropriate level.",
+                "score": 3
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

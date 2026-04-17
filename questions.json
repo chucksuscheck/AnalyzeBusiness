@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "category": "Awareness",
+    "text": "How would you describe your understanding of how AI applies to your business?",
+    "options": [
+      "No clear understanding",
+      "General awareness but unclear on application",
+      "Some specific ideas identified",
+      "Clear understanding of multiple use cases"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Awareness",
+    "text": "How clearly have you identified where AI could improve your operations?",
+    "options": [
+      "Not identified",
+      "Vague ideas only",
+      "A few defined opportunities",
+      "Prioritized list of use cases"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Awareness",
+    "text": "How confident are you in evaluating AI tools or solutions?",
+    "options": [
+      "Not confident at all",
+      "Some familiarity but unsure how to evaluate",
+      "Can compare tools at a basic level",
+      "Confident evaluating based on business needs"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Usage",
+    "text": "How is AI currently being used in your business?",
+    "options": [
+      "Not used at all",
+      "Individual experimentation only",
+      "Used in a few workflows",
+      "Integrated into multiple processes"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Usage",
+    "text": "How consistent is AI usage across your team?",
+    "options": [
+      "No usage",
+      "Sporadic individual use",
+      "Some shared practices",
+      "Standardized usage across roles"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Usage",
+    "text": "How measurable are the results from your AI usage?",
+    "options": [
+      "No measurement",
+      "Anecdotal benefits only",
+      "Some tracked improvements",
+      "Clear metrics tied to business outcomes"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Risk & Governance",
+    "text": "Do you have guidelines for how employees should use AI tools?",
+    "options": [
+      "No guidelines",
+      "Informal suggestions",
+      "Basic documented guidance",
+      "Clear policies and enforcement"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Risk & Governance",
+    "text": "How do you manage sensitive or proprietary data when using AI?",
+    "options": [
+      "No controls",
+      "Awareness but inconsistent handling",
+      "Basic safeguards in place",
+      "Defined and enforced data policies"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Risk & Governance",
+    "text": "How well do you understand the risks of AI (hallucination, bias, compliance)?",
+    "options": [
+      "No understanding",
+      "Limited awareness",
+      "General understanding",
+      "Strong understanding with mitigation strategies"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Process & Integration",
+    "text": "How well is AI integrated into your business workflows?",
+    "options": [
+      "Not integrated",
+      "Ad hoc usage",
+      "Some defined workflows",
+      "Embedded into core processes"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Process & Integration",
+    "text": "How repeatable are your AI-driven processes?",
+    "options": [
+      "Not repeatable",
+      "Inconsistent",
+      "Some repeatability",
+      "Documented and repeatable"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Process & Integration",
+    "text": "How do you prioritize new AI opportunities?",
+    "options": [
+      "No prioritization",
+      "Reactive / opportunistic",
+      "Some structured decision-making",
+      "Clear prioritization framework"
+    ]
+  }
+]
